@@ -6,10 +6,11 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
   </head>
   <body>
-    <ul class="cantganadas">
+    <div class="contenedor">
+    <ul>
       <li class="nombre">Jugador</li>
       <li id="ganadasjugador"> 0 </li>
-      <li class="separador">-</li>
+      <li id="separador">-</li>
       <li id="ganadasmaquina"> 0 </li>
       <li class="nombre">Computadora</li>
     </ul>
@@ -24,12 +25,11 @@
         <img id="maquina" src="imagenes/p_p_t.png">
       </p>
     </div>
-    <ul>
-      <li><button id="piedra">Piedra</button></li>
-      <li><button id="papel">Papel</button></li>
-      <li><button id="tijera">Tijera</button></li>
-      <li><input type="checkbox" id="corte">Bloqueo oponente</li>
-    </ul>
+    <button id="piedra">Piedra</button></li>
+    <button id="papel">Papel</button></li>
+    <button id="tijera">Tijera</button></li>
+    <input type="checkbox" id="corte">Bloqueo oponente</li>
+    </div>
     <script type="text/javascript" src=js/piedra_papel_tijera.js ></script>
   </body>
 </html>
