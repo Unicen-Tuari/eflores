@@ -34,3 +34,7 @@ div p {
   display: inline-block;
   padding-right: 10px;
 }
+
+div input {
+  margin-top: 10px;
+}

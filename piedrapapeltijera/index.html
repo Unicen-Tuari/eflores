@@ -7,28 +7,32 @@
   </head>
   <body>
     <div class="contenedor">
-    <ul>
-      <li class="nombre">Jugador</li>
-      <li id="ganadasjugador"> 0 </li>
-      <li id="separador">-</li>
-      <li id="ganadasmaquina"> 0 </li>
-      <li class="nombre">Computadora</li>
-    </ul>
-    <div >
-      <p>
-        <img id="jugador" src="imagenes/p_p_t.png">
-      </p>
-      <p>
-        <img id="resultado" src="imagenes/nada.png">
-      </p>
-      <p>
-        <img id="maquina" src="imagenes/p_p_t.png">
-      </p>
-    </div>
-    <button id="piedra">Piedra</button></li>
-    <button id="papel">Papel</button></li>
-    <button id="tijera">Tijera</button></li>
-    <input type="checkbox" id="corte">Bloqueo oponente</li>
+      <ul>
+        <li class="nombre">Jugador</li>
+        <li id="ganadasjugador"> 0 </li>
+        <li id="separador">-</li>
+        <li id="ganadasmaquina"> 0 </li>
+        <li class="nombre">Computadora</li>
+      </ul>
+      <div >
+        <p>
+          <img id="jugador" src="imagenes/p_p_t.png">
+        </p>
+        <p>
+          <img id="resultado" src="imagenes/nada.png">
+        </p>
+        <p>
+          <img id="maquina" src="imagenes/p_p_t.png">
+        </p>
+      </div>
+      <button id="piedra">Piedra</button>
+      <button id="papel">Papel</button>
+      <button id="tijera">Tijera</button>
+      <input type="checkbox" name="bloqueo" id="check"> Bloqueo oponente
+      <div>
+        <input type="text" name="seleccion" id="seleccion" value="">
+        <button id="elegir">Elegir</button>
+      </div>
     </div>
     <script type="text/javascript" src=js/piedra_papel_tijera.js ></script>
   </body>

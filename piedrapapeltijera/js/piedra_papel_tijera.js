@@ -5,10 +5,11 @@ const papel = 2;
 const tijera = 3;
 const ganadasjugador = document.getElementById('ganadasjugador');
 const ganadasmaquina = document.getElementById('ganadasmaquina');
-const checkbox = document.getElementById('corte');
+const checkbox = document.getElementById('check');
 let imagencomp = document.getElementById("maquina");
 let resultado = document.getElementById("resultado");
 let imagenjug = document.getElementById("jugador");
+let seleccion = document.getElementById("seleccion");
 let selec_maquina = 0;
 let ptsjugador = 0;
 let ptsmaquina = 0;
@@ -18,13 +19,15 @@ function selec_random(max) {
 }
 
 function seleccion_de_la_maquina() {
-  if (!checkbox.checked) {
-    selec_maquina = selec_random(3);
-    imagencomp.src = "imagenes/d"+selec_maquina+".png"
-  } /*else {  // Aleatorio en piedra y papel //
-    selec_maquina = selec_random(2);
-    imagencomp.src = "imagenes/d"+selec_maquina+".png"
-  }*/
+  if (valor_selec() != 0) { // is para seleccion con texto //
+    if (!checkbox.checked) {
+      selec_maquina = selec_random(3);
+      imagencomp.src = "imagenes/d"+selec_maquina+".png"
+    } /*else {  // Aleatorio en piedra y papel //
+      selec_maquina = selec_random(2);
+      imagencomp.src = "imagenes/d"+selec_maquina+".png"
+    }*/
+  }
 }
 
 function felicitar() {
@@ -98,3 +101,33 @@ papelBtm.addEventListener("click", function(){ selec_jugador(papel);});
 let tijeraBtm = document.getElementById('tijera');
 tijeraBtm.addEventListener("click", seleccion_de_la_maquina);
 tijeraBtm.addEventListener("click", function(){ selec_jugador(tijera);});
+
+//----------------------------------------------------------------------------//
+// Seleccion con texto //
+function valor_selec() {
+  if (seleccion.value == "piedra") {
+    return piedra;
+  } else {
+    if (seleccion.value == "papel") {
+      return papel;
+    } else {
+      if (seleccion.value == "tijera") {
+        return tijera;
+      } else {
+        return 0;
+      }
+    }
+  }
+}
+
+function text_selec() {
+  if (valor_selec() != 0) {
+    selec_jugador(valor_selec());
+  } else {
+    alert("Valor no valido, elige (piedra, papel o tijera)");
+  }
+}
+
+let elegirBtm = document.getElementById('elegir');
+elegirBtm.addEventListener("click", seleccion_de_la_maquina);
+elegirBtm.addEventListener("click", function(){ text_selec()});
