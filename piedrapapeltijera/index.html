@@ -7,32 +7,40 @@
   </head>
   <body>
     <div class="contenedor">
-      <ul>
-        <li class="nombre">Jugador</li>
-        <li id="ganadasjugador"> 0 </li>
-        <li id="separador">-</li>
-        <li id="ganadasmaquina"> 0 </li>
-        <li class="nombre">Computadora</li>
-      </ul>
-      <div >
-        <p>
+      <div class="puntuacion">
+        <p class="nombre">
+          Jugador
+        </p>
+        <p id="ganadasjugador"> 
+          0 
+        </li>
+        <p id="separador">
+          -
+        </p>
+        <p id="ganadasmaquina">
+           0 
+        </p>
+        <p class="nombre">
+          Computadora
+        </p>
+      </div>
+      <div>
+        <p class="izquieda">
           <img id="jugador" src="imagenes/p_p_t.png">
         </p>
         <p>
           <img id="resultado" src="imagenes/nada.png">
         </p>
-        <p>
+        <p class="derecha">
           <img id="maquina" src="imagenes/p_p_t.png">
         </p>
       </div>
-      <button id="piedra">Piedra</button>
-      <button id="papel">Papel</button>
-      <button id="tijera">Tijera</button>
-      <input type="checkbox" name="bloqueo" id="check"> Bloqueo oponente
-      <div>
-        <input type="text" name="seleccion" id="seleccion" value="">
-        <button id="elegir">Elegir</button>
-      </div>
+      <ul>
+        <li><button id="piedra">Piedra</button></li>
+        <li><button id="papel">Papel</button></li>
+        <li><button id="tijera">Tijera</button></li>
+        <li><input type="checkbox" name="bloqueo" id="check"> Cambiar probabilidad</li>
+      </ul>
     </div>
     <script type="text/javascript" src=js/piedra_papel_tijera.js ></script>
   </body>

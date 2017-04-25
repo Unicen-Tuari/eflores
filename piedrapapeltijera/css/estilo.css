@@ -3,28 +3,17 @@ body {
   cursor: default;
 }
 
-div.contenedor {
-  margin: 0 auto;
-  width: 35%;
+div.puntuacion{
+  padding-left: 125px;
+  font-size: 26px;
+  font-style: oblique; 
 }
 
-ul {
-  list-style: none;
-  padding-left: 150px;
-}
-
-ul li {
-  display: inline-block;
-  font-size: 30px;
-  font-family: fantasy;
-  font-style: italic;
-}
-
-li#separador {
+p#separador {
   padding: 0 20px 0 20px;
 }
 
-li.nombre {
+p.nombre {
   font-variant: small-caps;
   padding: 0 10px 0 10px;
   text-decoration: underline;
@@ -37,4 +26,13 @@ div p {
 
 div input {
   margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  font-size: 12px;
 }

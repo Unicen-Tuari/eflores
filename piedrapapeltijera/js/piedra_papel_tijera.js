@@ -1,85 +1,73 @@
 "use strict";
+//seleccionandolo de una lista
+//Si la anterior fue tijera cambia siempre a piedra, sino elige al azar entre las tres con igual probabilidad.
+//Cada partida se inserta en una tabla con las columnas “número de partida” y “ganador” (computadora/humano).
 
 const piedra = 1;
 const papel = 2;
 const tijera = 3;
 const ganadasjugador = document.getElementById('ganadasjugador');
-const ganadasmaquina = document.getElementById('ganadasmaquina');
-const checkbox = document.getElementById('check');
+const ganadascomputadora = document.getElementById('ganadasmaquina');
+const cambiar_probabilidad = document.getElementById('check');
 let imagencomp = document.getElementById("maquina");
 let resultado = document.getElementById("resultado");
 let imagenjug = document.getElementById("jugador");
 let seleccion = document.getElementById("seleccion");
-let selec_maquina = 0;
+let selec_computadora = 0;
 let ptsjugador = 0;
-let ptsmaquina = 0;
+let ptscomputadora = 0;
 
-function selec_random(max) {
-  return Math.floor(Math.random()*max + 1);
+function seleccion_de_la_comptadora(opciones) {
+  selec_computadora = Math.floor(Math.random()*opciones + 1);
+  imagencomp.src = "imagenes/d"+selec_computadora+".png"
 }
 
-function seleccion_de_la_maquina() {
-  if (valor_selec() != 0) { // is para seleccion con texto //
-    if (!checkbox.checked) {
-      selec_maquina = selec_random(3);
-      imagencomp.src = "imagenes/d"+selec_maquina+".png"
-    } /*else {  // Aleatorio en piedra y papel //
-      selec_maquina = selec_random(2);
-      imagencomp.src = "imagenes/d"+selec_maquina+".png"
-    }*/
-  }
-}
-
-function felicitar() {
-  if ((ptsjugador >= 3) && ((ptsjugador % 3) == 0)) {
-    alert("Felicitaciones has ganado "+ptsjugador+" veces");
-  }
+function jugada_computadora() {
+  if (!cambiar_probabilidad.checked) {
+    seleccion_de_la_comptadora(3);
+    } else {
+      let opciones = ((selec_computadora != 0) && (selec_computadora == tijera)) ? 2 : 3;
+      seleccion_de_la_comptadora(opciones);
+  }    
 }
 
 function ganador(selec_jugador) {
-  if (((selec_jugador == piedra) && (selec_maquina == tijera)) || ((selec_jugador == tijera) && (selec_maquina == piedra))) {
+  if (((selec_jugador == piedra) && (selec_computadora == tijera)) || ((selec_jugador == tijera) && (selec_maquina == piedra))) {
     if (selec_jugador == piedra) {
       resultado.src = "imagenes/ganaste.png"
-      document.body.style.backgroundColor = "#D0F5A9";
       ptsjugador += 1;
-      felicitar();
     } else {
       resultado.src = "imagenes/perdiste.png"
-      document.body.style.backgroundColor = "##F5A9A9";
-      ptsmaquina += 1;
+      ptscomputadora += 1;
     }
   } else {
-    if (selec_jugador > selec_maquina) {
+    if (selec_jugador > selec_computadora) {
       resultado.src = "imagenes/ganaste.png"
-      document.body.style.backgroundColor = "#D0F5A9";
       ptsjugador += 1;
-      felicitar();
     } else {
-      if (selec_jugador < selec_maquina) {
+      if (selec_jugador < selec_computadora) {
         resultado.src = "imagenes/perdiste.png"
-        document.body.style.backgroundColor = "#F5A9A9";
-        ptsmaquina += 1;
+        ptscomputadora += 1;
       }else{
         resultado.src = "imagenes/nada.png"
-        document.body.style.backgroundColor = "#A9F5F2";
       }
     }
   }
   ganadasjugador.innerHTML = ptsjugador;
-  ganadasmaquina.innerHTML = ptsmaquina;
+  ganadasmaquina.innerHTML = ptscomputadora;
 }
 
 function va_ganando() {
-  if (ptsjugador > ptsmaquina) {
+  if (ptsjugador > ptscomputadora) {
     ganadasjugador.style.color = "#45c71a";
-    ganadasmaquina.style.color = "#bc1430";
+    ganadascomputadora.style.color = "#bc1430";
   } else {
     if (ptsjugador < ptsmaquina) {
       ganadasjugador.style.color = "#bc1430";
-      ganadasmaquina.style.color = "#45c71a";
+      ganadascomputadora.style.color = "#45c71a";
     } else {
       ganadasjugador.style.color = "blue";
-      ganadasmaquina.style.color = "blue";
+      ganadascomputadora.style.color = "blue";
     }
   }
 }
@@ -91,43 +79,13 @@ function selec_jugador(selec_jugador) {
 }
 
 let piedraBtm = document.getElementById('piedra');
-piedraBtm.addEventListener("click", seleccion_de_la_maquina);
+piedraBtm.addEventListener("click", jugada_computadora);
 piedraBtm.addEventListener("click", function(){ selec_jugador(piedra);});
 
 let papelBtm = document.getElementById('papel');
-papelBtm.addEventListener("click", seleccion_de_la_maquina);
+papelBtm.addEventListener("click", jugada_computadora);
 papelBtm.addEventListener("click", function(){ selec_jugador(papel);});
 
 let tijeraBtm = document.getElementById('tijera');
-tijeraBtm.addEventListener("click", seleccion_de_la_maquina);
+tijeraBtm.addEventListener("click", jugada_computadora);
 tijeraBtm.addEventListener("click", function(){ selec_jugador(tijera);});
-
-//----------------------------------------------------------------------------//
-// Seleccion con texto //
-function valor_selec() {
-  if (seleccion.value == "piedra") {
-    return piedra;
-  } else {
-    if (seleccion.value == "papel") {
-      return papel;
-    } else {
-      if (seleccion.value == "tijera") {
-        return tijera;
-      } else {
-        return 0;
-      }
-    }
-  }
-}
-
-function text_selec() {
-  if (valor_selec() != 0) {
-    selec_jugador(valor_selec());
-  } else {
-    alert("Valor no valido, elige (piedra, papel o tijera)");
-  }
-}
-
-let elegirBtm = document.getElementById('elegir');
-elegirBtm.addEventListener("click", seleccion_de_la_maquina);
-elegirBtm.addEventListener("click", function(){ text_selec()});
