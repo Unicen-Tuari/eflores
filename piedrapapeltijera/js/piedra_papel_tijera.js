@@ -1,7 +1,7 @@
 "use strict";
 //seleccionandolo de una lista
 //Si la anterior fue tijera cambia siempre a piedra, sino elige al azar entre las tres con igual probabilidad -- listo --
-//Cada partida se inserta en una tabla con las columnas “número de partida” y “ganador” (computadora/humano). 
+//Cada partida se inserta en una tabla con las columnas “número de partida” y “ganador” (computadora/humano). -- listo --
 
 const piedra = 1;
 const papel = 2;
