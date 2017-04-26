@@ -1,5 +1,5 @@
 "use strict";
-//seleccionandolo de una lista
+//seleccionandolo de una lista -- listo --
 //Si la anterior fue tijera cambia siempre a piedra, sino elige al azar entre las tres con igual probabilidad -- listo --
 //Cada partida se inserta en una tabla con las columnas “número de partida” y “ganador” (computadora/humano). -- listo --
 
