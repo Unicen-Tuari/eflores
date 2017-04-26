@@ -6,42 +6,50 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
   </head>
   <body>
-    <div class="contenedor">
-      <div class="puntuacion">
-        <p class="nombre">
-          Jugador
-        </p>
-        <p id="ganadasjugador"> 
-          0 
-        </li>
-        <p id="separador">
-          -
-        </p>
-        <p id="ganadasmaquina">
-           0 
-        </p>
-        <p class="nombre">
-          Computadora
-        </p>
-      </div>
-      <div>
-        <p class="izquieda">
-          <img id="jugador" src="imagenes/p_p_t.png">
-        </p>
-        <p>
-          <img id="resultado" src="imagenes/nada.png">
-        </p>
-        <p class="derecha">
-          <img id="maquina" src="imagenes/p_p_t.png">
-        </p>
-      </div>
-      <ul>
-        <li><button id="piedra">Piedra</button></li>
-        <li><button id="papel">Papel</button></li>
-        <li><button id="tijera">Tijera</button></li>
-        <li><input type="checkbox" name="bloqueo" id="check"> Cambiar probabilidad</li>
-      </ul>
+    <div class="puntuacion">
+      <p class="nombre">
+        Jugador
+      </p>
+      <p id="ganadasjugador">
+        0
+      </li>
+      <p id="separador">
+        -
+      </p>
+      <p id="ganadasmaquina">
+         0
+      </p>
+      <p class="nombre">
+        Computadora
+      </p>
     </div>
+    <div>
+      <p >
+        <img id="jugador" src="imagenes/i1.png">
+      </p>
+      <p>
+        <img id="resultado" src="imagenes/nada.png">
+      </p>
+      <p>
+        <img id="computadora" src="imagenes/d1.png">
+      </p>
+    </div>
+    <ul>
+      <li><button id="piedra">Piedra</button></li>
+      <li><button id="papel">Papel</button></li>
+      <li><button id="tijera">Tijera</button></li>
+      <li><input type="checkbox" name="bloqueo" id="check"> Cambiar probabilidad</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>numero de partida</th>
+          <th>ganador</th>
+        </tr>
+      </thead>
+      <tbody id="partidas">
+      </tbody>
+    </table>
     <script type="text/javascript" src=js/piedra_papel_tijera.js ></script>
   </body>
 </html>

@@ -1,12 +1,13 @@
 body {
-  background-color: #A9F5F2;
+  background-color: #b4b4b4;
   cursor: default;
 }
 
 div.puntuacion{
-  padding-left: 125px;
-  font-size: 26px;
-  font-style: oblique; 
+  padding-left: 400px;
+  font-size: 35px;
+  font-style: oblique;
+  font-family: fantasy;
 }
 
 p#separador {
@@ -15,7 +16,6 @@ p#separador {
 
 p.nombre {
   font-variant: small-caps;
-  padding: 0 10px 0 10px;
   text-decoration: underline;
 }
 
@@ -24,15 +24,25 @@ div p {
   padding-right: 10px;
 }
 
-div input {
-  margin-top: 10px;
-}
-
 ul {
   list-style: none;
 }
 
 ul li {
   display: inline-block;
-  font-size: 12px;
+  font-size: 16px;
+}
+
+table, td, th{
+  border: 2px solid;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td, th{
+  width: 100px;
+  width: 163px;
+  font-variant: small-caps;
+  font-size: 17px;
+  font-style: oblique;
 }
