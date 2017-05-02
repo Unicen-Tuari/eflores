@@ -1,10 +1,10 @@
 body {
-  background-color: #b4b4b4;
-  cursor: default;
+  background-color: #DFDFDF;
 }
 
 div.puntuacion{
-  padding-left: 400px;
+  margin: 0 auto;
+  width: 66%;
   font-size: 35px;
   font-style: oblique;
   font-family: fantasy;
@@ -26,28 +26,36 @@ div p {
 
 ul {
   padding: 0;
-  width: 400px;
+  width: 30%;
   list-style: none;
 }
 
 ul li {
   border-collapse: collapse;
   border: 2px solid;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   border-style: outset;
 }
+
+li.sin_borde {
+  border: none;
+}
+
+li, input[type="checkbox"] {
+   cursor: pointer;
+ }
 
 table, td, th{
   border: 2px solid;
   border-collapse: collapse;
   text-align: center;
+  width: 30%;
 }
 
 td, th{
-  width: 100px;
-  width: 163px;
+  width: 50%;
   font-variant: small-caps;
-  font-size: 17px;
+  font-size: 18px;
   font-style: oblique;
 }

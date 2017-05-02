@@ -6,9 +6,9 @@
 const piedra = 1;
 const papel = 2;
 const tijera = 3;
-const ganadasjugador = document.getElementById('ganadasjugador');
-const ganadascomputadora = document.getElementById('ganadasmaquina');
-const cambiar_probabilidad = document.getElementById('check');
+let ganadasjugador = document.getElementById('ganadasjugador');
+let ganadascomputadora = document.getElementById('ganadascomputadora');
+let cambiar_probabilidad = document.getElementById('check');
 let imagencomp = document.getElementById('computadora');
 let resultado = document.getElementById('resultado');
 let imagenjug = document.getElementById('jugador');
@@ -69,12 +69,12 @@ function ganador(selec_jugador) {
         jug_ganador = "computadora";
       }else{
         resultado.src = "imagenes/nada.png"
-        jug_ganador = " ";
+        jug_ganador = " - ";
       }
     }
   }
   ganadasjugador.innerHTML = ptsjugador;
-  ganadasmaquina.innerHTML = ptscomputadora;
+  ganadascomputadora.innerHTML = ptscomputadora;
   result_partidas();
 }
 
@@ -97,12 +97,6 @@ function selec_jugador(selec_jugador) {
   imagenjug.src = "imagenes/i"+selec_jugador+".png"
   ganador(selec_jugador);
   va_ganando();
-}
-
-function inicial() {
-  imagenjug.src = "imagenes/i"+selec_inicial+".png"
-  imagencomp.src = "imagenes/d"+selec_inicial+".png"
-  selec_inicial = (selec_inicial == 3) ? 0 : +1;
 }
 
 let piedraBtm = document.getElementById('piedra');
