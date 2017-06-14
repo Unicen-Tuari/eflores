@@ -8,12 +8,6 @@ class ModelText{
                         'root', '');
   }
 
-  function GetDiscografia(){
-    $consulta = $this->db->prepare("SELECT * FROM discos");
-    $result = $consulta->execute();
-    return $consulta->fetchAll();
-  }
-
   function GetTexto($ubicacion){
     $consulta = $this->db->prepare("SELECT * FROM texto WHERE ubicacion = ?");
     $result = $consulta->execute(array($ubicacion));

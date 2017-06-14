@@ -1,18 +1,21 @@
 <?php
 require_once('views/viewContacto.php');
 require_once('models/modelContacto.php');
+require_once('models/modelDiscografia.php');
 
 class ControllerContacto{
   private $vista;
   private $modelo;
+  private $modelo_c;
 
   function __construct(){
     $this->vista = new ViewContacto();
     $this->modelo = new ModelContacto();
+    $this->modelo_c = new ModelDiscografia();
   }
 
   function mostrarContacto(){
-    $discos = $this->modelo->GetDiscografia();
+    $discos = $this->modelo_c->GetDiscografia();
     $this->vista->mostrarContacto($discos);
   }
 

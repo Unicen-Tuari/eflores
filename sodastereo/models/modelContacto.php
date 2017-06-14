@@ -12,11 +12,5 @@ class ModelContacto{
     $consulta = $this->db->prepare("INSERT INTO contacto (nombre, email, mensaje, fecha) VALUES (?, ?, ?, CURRENT_TIMESTAMP)");
     $result = $consulta->execute(array($nombre,$email,$mensaje));
   }
-
-  function GetDiscografia(){
-    $consulta = $this->db->prepare("SELECT * FROM discos");
-    $result = $consulta->execute();
-    return $consulta->fetchAll();
-  }
 }
 ?>
