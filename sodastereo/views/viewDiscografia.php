@@ -10,6 +10,16 @@ class ViewDiscografia{
   }
 
   function mostrarDiscografia($discos, $canciones){
+    $login = 'LOGIN';
+    $logout = '';
+    session_start();
+    if (isset($_SESSION["logueado"])){
+      $login = 'ADMIN';
+      $logout = 'LOGOUT';
+    }
+    $this->smarty->assign("admin", $login);
+    $this->smarty->assign("logout", $logout);
+    $this->smarty->assign("active", 'discografia');
     $this->smarty->assign("discos", $discos);
     $this->smarty->assign("canciones", $canciones);
     $this->smarty->assign("baseDir", $this->baseDir);
@@ -17,6 +27,16 @@ class ViewDiscografia{
   }
 
   function mostrarDisco($disco, $canciones, $discos){
+    $login = 'LOGIN';
+    $logout = '';
+    session_start();
+    if (isset($_SESSION["logueado"])){
+      $login = 'ADMIN';
+      $logout = 'LOGOUT';
+    }
+    $this->smarty->assign("admin", $login);
+    $this->smarty->assign("logout", $logout);
+    $this->smarty->assign("active", 'discografia');
     $this->smarty->assign("discos", $discos);
     $this->smarty->assign("disco", $disco);
     $this->smarty->assign("canciones", $canciones);

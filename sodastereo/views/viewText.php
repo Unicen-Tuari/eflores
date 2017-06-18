@@ -10,6 +10,16 @@ class ViewText{
   }
 
   function mostrarTextoHome($texto, $discos){
+    $login = 'LOGIN';
+    $logout = '';
+    session_start();
+    if (isset($_SESSION["logueado"])){
+      $login = 'ADMIN';
+      $logout = 'LOGOUT';
+    }
+    $this->smarty->assign("admin", $login);
+    $this->smarty->assign("logout", $logout);
+    $this->smarty->assign("active", 'home');
     $this->smarty->assign("discos", $discos);
     $this->smarty->assign("texto", $texto);
     $this->smarty->assign("baseDir", $this->baseDir);
@@ -17,6 +27,16 @@ class ViewText{
   }
 
   function mostrarTextoBiografia($texto, $discos){
+    $login = 'LOGIN';
+    $logout = '';
+    session_start();
+    if (isset($_SESSION["logueado"])){
+      $login = 'ADMIN';
+      $logout = 'LOGOUT';
+    }
+    $this->smarty->assign("admin", $login);
+    $this->smarty->assign("logout", $logout);
+    $this->smarty->assign("active", 'biografia');
     $this->smarty->assign("discos", $discos);
     $this->smarty->assign("texto", $texto);
     $this->smarty->assign("baseDir", $this->baseDir);

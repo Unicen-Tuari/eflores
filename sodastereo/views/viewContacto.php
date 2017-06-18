@@ -10,6 +10,16 @@ class ViewContacto{
   }
 
   function mostrarContacto($discos){
+    $login = 'LOGIN';
+    $logout = '';
+    session_start();
+    if (isset($_SESSION["logueado"])){
+      $login = 'ADMIN';
+      $logout = 'LOGOUT';
+    }
+    $this->smarty->assign("admin", $login);
+    $this->smarty->assign("logout", $logout);
+    $this->smarty->assign("active", 'contacto');
     $this->smarty->assign("discos", $discos);
     $this->smarty->assign("baseDir", $this->baseDir);
     $this->smarty->display('contacto.tpl');

@@ -1,7 +1,7 @@
 {include file="header.tpl" title=foo}
 <div class="container">
   <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 ">
-    <form class="form-signin" action="http://localhost/sodastereo/login/iniciar" method="post">
+    <form class="form-signin" action="http://localhost/sodastereo/login/login" method="post">
       <h2 class="form-signin-heading">Iniciar sesion</h2>
       <label for="inputUsuario" class="sr-only">Usiario</label>
       <input id="inputUsuario" class="form-control" name="usuario" placeholder="Usuario" type="text">

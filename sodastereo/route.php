@@ -4,6 +4,7 @@ require_once('controllers/controllerDiscografia.php');
 require_once('controllers/controllerText.php');
 require_once('controllers/controllerContacto.php');
 require_once('controllers/controllerLogin.php');
+require_once('controllers/controllerAdmin.php');
 
 function parseUrl($url){
   $arr_data = explode ("/",$url);
@@ -22,12 +23,6 @@ else{
   if ($datos[ConfigApp::$RESOURCE] === ConfigApp::$RESOURCE_DISC){
     $controller = new ControllerDiscografia();
     switch ($datos[ConfigApp::$ACTION]){
-      case ConfigApp::$ACTION_DELETE:
-        $controller->BorrarTarea($datos[ConfigApp::$PARAMETERS]);
-        break;
-      case ConfigApp::$ACTION_ADD:
-        $controller->InsertarTarea();
-        break;
       case ConfigApp::$ACTION_VIEW:
         $controller->mostrarDisco($datos[ConfigApp::$PARAMETERS]);
         break;
@@ -64,6 +59,33 @@ else{
               default:
                 $controller->mostrarLogin();
                 break;
+            }
+          }else{
+            if ($datos[ConfigApp::$RESOURCE] === ConfigApp::$RESOURCE_ADMIN){
+              session_start();
+              if (isset($_SESSION["logueado"])){
+                $controller = new ControllerAdmin();
+                switch ($datos[ConfigApp::$ACTION]){
+                  case ConfigApp::$ACTION_ADD:
+                    $controller->
+                    break;
+                  case ConfigApp::$ACTION_DELETE:
+                    $controller->
+                    break;
+                  case ConfigApp::$ACTION_EDIT:
+                    $controller->
+                    break;
+                  case ConfigApp::$ACTION_LOGOUT:
+                    session_destroy();
+                    header('Location: http://localhost/sodastereo');
+                    break;
+                  default:
+                    $controller->mostrarListas();
+                    break;
+                }
+              }else{
+                header('Location: http://localhost/sodastereo/login');
+              }
             }
           }
         }

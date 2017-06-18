@@ -1,6 +1,6 @@
 <?php
 require_once('views/viewLogin.php');
-require_once('models/modelLogin.php');
+require_once('models/modelUsuario.php');
 
 class ControllerLogin{
   private $vista;
@@ -8,7 +8,7 @@ class ControllerLogin{
 
   function __construct(){
     $this->vista = new ViewLogin();
-    $this->modelo = new ModelLogin();
+    $this->modelo = new ModelUsuario();
   }
 
   function mostrarLogin(){
@@ -16,19 +16,17 @@ class ControllerLogin{
   }
 
   function iniciarSesion(){
-    if (isset($_POST["usuario"]) && strlen(trim($_POST["usuario"])) > 0){
+    if ((isset($_POST['usuario']) && strlen(trim($_POST['usuario'])) > 0) && (isset($_POST['password']) && strlen(trim($_POST['password'])) > 0)){
       $id_usuario = $_POST["usuario"];
-    }
-    if (isset($_POST["password"]) && strlen(trim($_POST["password"])) > 0){
       $password = $_POST["password"];
-    }
-    $usuario = $this->modelo->GetUsuario($id_usuario);
-    if (password_verify($password, $usuario["password"])){
-      session_start();
-      $_SESSION["logueado"] = true;
-      header('Location: http://localhost/sodastereo/');
-    }else{
-      echo "Usuasio/Contraseña incorrecto/a";
+      $usuario = $this->modelo->GetUsuario($id_usuario);
+      if (password_verify($password, $usuario['password'])){
+        session_start();
+        $_SESSION["logueado"] = true;
+        header('Location: http://localhost/sodastereo/admin');
+      }else{
+        echo "Usuasio/Contraseña incorrecto/a";
+      }
     }
   }
 }
