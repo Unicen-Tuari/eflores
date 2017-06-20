@@ -31,15 +31,15 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $anio = $_POST["anio"];
       $this->modelo->insertarDisco($nombre, $anio);
-      header('Location: http://localhost/sodastereo/admin/discografia');
+      header('Location: /sodastereo/admin/discografia');
     }else{
-      header('Location: http://localhost/sodastereo/admin/discografia/new');
+      header('Location: /sodastereo/admin/discografia/new');
     }
   }
 
   function borrarDisco($id_disco){
     $this->modelo->borrarDisco($id_disco);
-    header('Location: http://localhost/sodastereo/admin/discografia');
+    header('Location: /sodastereo/admin/discografia');
   }
 
   function editarDisco($id_disco){
@@ -52,9 +52,9 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $anio = $_POST["anio"];
       $this->modelo->modificarDisco($id_disco,$nombre, $anio);
-      header('Location: http://localhost/sodastereo/admin/discografia');
+      header('Location: /sodastereo/admin/discografia');
     }else{
-      header('Location: http://localhost/sodastereo/admin/discografia/editar/'.$id_disco);
+      header('Location: /sodastereo/admin/discografia/editar/'.$id_disco);
     }
   }
 
@@ -77,9 +77,9 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $duracion = $_POST["duracion"];
       $this->modelo->insertarCancion($id_disco,$nro,$nombre,$duracion);
-      header('Location: http://localhost/sodastereo/admin/canciones');
+      header('Location: /sodastereo/admin/canciones');
     }else {
-      header('Location: http://localhost/sodastereo/admin/canciones/new');
+      header('Location: /sodastereo/admin/canciones/new');
     }
   }
 
@@ -96,15 +96,15 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $duracion = $_POST["duracion"];
       $this->modelo->insertarCancion($id_disco,$nro,$nombre,$duracion,$id);
-      header('Location: http://localhost/sodastereo/admin/canciones');
+      header('Location: /sodastereo/admin/canciones');
     }else{
-      header('Location: http://localhost/sodastereo/admin/canciones/editar/'.$id);
+      header('Location: /sodastereo/admin/canciones/editar/'.$id);
     }
   }
 
   function borrarCancion($id){
     $this->modelo->borrarCancion($id);
-    header('Location: http://localhost/sodastereo/admin/canciones');
+    header('Location: /sodastereo/admin/canciones');
   }
 }
 ?>
