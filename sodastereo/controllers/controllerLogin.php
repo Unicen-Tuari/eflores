@@ -23,10 +23,12 @@ class ControllerLogin{
       if (password_verify($password, $usuario['password'])){
         session_start();
         $_SESSION["logueado"] = true;
-        header('Location: http://localhost/sodastereo/admin');
+        header('Location: http://localhost/sodastereo');
       }else{
-        echo "Usuasio/Contraseña incorrecto/a";
+        header('Location: http://localhost/sodastereo/login');
       }
+    }else{
+      header('Location: http://localhost/sodastereo/login');
     }
   }
 }

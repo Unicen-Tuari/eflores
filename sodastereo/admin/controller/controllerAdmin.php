@@ -31,8 +31,10 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $anio = $_POST["anio"];
       $this->modelo->insertarDisco($nombre, $anio);
+      header('Location: http://localhost/sodastereo/admin/discografia');
+    }else{
+      header('Location: http://localhost/sodastereo/admin/discografia/new');
     }
-    header('Location: http://localhost/sodastereo/admin/discografia');
   }
 
   function borrarDisco($id_disco){
@@ -50,8 +52,10 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $anio = $_POST["anio"];
       $this->modelo->modificarDisco($id_disco,$nombre, $anio);
+      header('Location: http://localhost/sodastereo/admin/discografia');
+    }else{
+      header('Location: http://localhost/sodastereo/admin/discografia/editar/'.$id_disco);
     }
-    header('Location: http://localhost/sodastereo/admin/discografia');
   }
 
 // ----- CANCIONES -----
@@ -73,8 +77,10 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $duracion = $_POST["duracion"];
       $this->modelo->insertarCancion($id_disco,$nro,$nombre,$duracion);
+      header('Location: http://localhost/sodastereo/admin/canciones');
+    }else {
+      header('Location: http://localhost/sodastereo/admin/canciones/new');
     }
-    header('Location: http://localhost/sodastereo/admin/canciones');
   }
 
   function editarCancion($id){
@@ -90,8 +96,10 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $duracion = $_POST["duracion"];
       $this->modelo->insertarCancion($id_disco,$nro,$nombre,$duracion,$id);
+      header('Location: http://localhost/sodastereo/admin/canciones');
+    }else{
+      header('Location: http://localhost/sodastereo/admin/canciones/editar/'.$id);
     }
-    header('Location: http://localhost/sodastereo/admin/canciones');
   }
 
   function borrarCancion($id){
