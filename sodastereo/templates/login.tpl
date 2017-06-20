@@ -9,6 +9,7 @@
       <input id="inputPassword" class="form-control" name="password" placeholder="Password" type="password">
       <button class="btn btn-lg btn-default btn-block" type="submit">Sign in</button>
     </form>
+    <a href="./"><button type="submit" class="btn btn-lg btn-default btn-block">Cancelar</button></a>
   </div>
 </div>
 {include file="footer.tpl"}

@@ -4,7 +4,6 @@ require_once('controllers/controllerDiscografia.php');
 require_once('controllers/controllerText.php');
 require_once('controllers/controllerContacto.php');
 require_once('controllers/controllerLogin.php');
-require_once('controllers/controllerAdmin.php');
 
 function parseUrl($url){
   $arr_data = explode ("/",$url);
@@ -39,7 +38,7 @@ else{
           $controller = new ControllerText();
           $controller->mostrarTexto($datos[ConfigApp::$RESOURCE]);
       }else{
-        if ($datos[ConfigApp::$RESOURCE] === ConfigApp::$RESOURCE_CONTACTO){
+        if ($datos[ConfigApp::$RESOURCE] === ConfigApp::$RESOURCE_CONTACT){
             $controller = new ControllerContacto();
             switch ($datos[ConfigApp::$ACTION]){
               case ConfigApp::$ACTION_ADD:
@@ -59,33 +58,6 @@ else{
               default:
                 $controller->mostrarLogin();
                 break;
-            }
-          }else{
-            if ($datos[ConfigApp::$RESOURCE] === ConfigApp::$RESOURCE_ADMIN){
-              session_start();
-              if (isset($_SESSION["logueado"])){
-                $controller = new ControllerAdmin();
-                switch ($datos[ConfigApp::$ACTION]){
-                  case ConfigApp::$ACTION_ADD:
-                    $controller->
-                    break;
-                  case ConfigApp::$ACTION_DELETE:
-                    $controller->
-                    break;
-                  case ConfigApp::$ACTION_EDIT:
-                    $controller->
-                    break;
-                  case ConfigApp::$ACTION_LOGOUT:
-                    session_destroy();
-                    header('Location: http://localhost/sodastereo');
-                    break;
-                  default:
-                    $controller->mostrarListas();
-                    break;
-                }
-              }else{
-                header('Location: http://localhost/sodastereo/login');
-              }
             }
           }
         }
