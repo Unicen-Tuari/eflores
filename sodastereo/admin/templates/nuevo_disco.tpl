@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4">
       <h1 class="discografia">Nuevo Disco</h1>
-      <form class="form-horizontal" action="/sodastereo/admin/discografia/agregar" method="post">
+      <form class="form-horizontal" action="/eflroes/sodastereo/admin/discografia/agregar" method="post">
         <div class="form-group">
           <label class="col-sm-2 control-label">NOMBRE:</label>
           <div class="col-sm-10">

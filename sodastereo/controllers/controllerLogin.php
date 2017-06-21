@@ -23,12 +23,12 @@ class ControllerLogin{
       if (password_verify($password, $usuario['password'])){
         session_start();
         $_SESSION["logueado"] = true;
-        header('Location: /sodastereo');
+        header('Location: /eflores/sodastereo');
       }else{
-        header('Location: /sodastereo/login');
+        header('Location: /eflores/sodastereo/login');
       }
     }else{
-      header('Location: /sodastereo/login');
+      header('Location: /eflores/sodastereo/login');
     }
   }
 }

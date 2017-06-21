@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4">
       <h1 class="discografia">Modificar Cancion</h1>
-      <form class="form-horizontal" action="/sodastereo/admin/canciones/cambiar/{$cancion['id']}" method="post">
+      <form class="form-horizontal" action="/eflores/sodastereo/admin/canciones/cambiar/{$cancion['id']}" method="post">
         <div class="form-group">
           <label class="col-sm-2 control-label ">DISCO ID:</label>
           <div class="input-group">

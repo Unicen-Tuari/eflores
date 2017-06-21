@@ -1,7 +1,7 @@
 {include file="header.tpl" title=foo}
 <div class="container">
   <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 ">
-    <form class="form-signin" action="/sodastereo/login/login" method="post">
+    <form class="form-signin" action="/eflores/sodastereo/login/login" method="post">
       <div class="form-group">
         <h2 class="form-signin-heading discografia">Iniciar sesión</h2>
         <label for="inputUsuario" class="sr-only">Usiario</label>

@@ -31,15 +31,15 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $anio = $_POST["anio"];
       $this->modelo->insertarDisco($nombre, $anio);
-      header('Location: /sodastereo/admin/discografia');
+      header('Location: /eflores/sodastereo/admin/discografia');
     }else{
-      header('Location: /sodastereo/admin/discografia/new');
+      header('Location: /eflores/sodastereo/admin/discografia/new');
     }
   }
 
   function borrarDisco($id_disco){
     $this->modelo->borrarDisco($id_disco);
-    header('Location: /sodastereo/admin/discografia');
+    header('Location: /eflores/sodastereo/admin/discografia');
   }
 
   function editarDisco($id_disco){

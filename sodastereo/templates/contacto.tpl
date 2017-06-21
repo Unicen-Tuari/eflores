@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 ">
-      <form action="/sodastereo/contacto/agregar" method="post">
+      <form action="/eflores/sodastereo/contacto/agregar" method="post">
         <div class="form-group">
           <label>Nombre y Apellido</label>
           <input type="text" class="form-control" name="nombre" placeholder="Nombre Apellido">

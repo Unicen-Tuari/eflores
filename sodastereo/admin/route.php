@@ -65,12 +65,12 @@ if (isset($_SESSION["logueado"])){
       }else{
         if ($datos[ConfigApp::$RESOURCE] === ConfigApp::$RESOURCE_LOGOUT){
           session_destroy();
-          header('Location: /sodastereo');
+          header('Location: /eflores/sodastereo');
         }
       }
     }
   }
 }else{
-  header('Location: /sodastereo/login');
+  header('Location: /eflores/sodastereo/login');
 }
 ?>

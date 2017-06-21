@@ -16,17 +16,17 @@
         <li class="dropdown {if $active == 'discografia'}active{/if}">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DISCOGRAFIA<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/sodastereo/discografia">COMPLETA</a></li>
+            <li><a href="/eflores/sodastereo/discografia">COMPLETA</a></li>
             <li class="divider" role="separator"></li>
             {foreach from=$discos item=disco}
-              <li><a href="/sodastereo/discografia/disco/{$disco['id']}">{$disco['nombreDisco']} ({$disco['anio']})</a></li>
+              <li><a href="/eflores/sodastereo/discografia/disco/{$disco['id']}">{$disco['nombreDisco']} ({$disco['anio']})</a></li>
             {/foreach}
         </ul>
-        <li {if $active == 'contacto'}class="active"{/if}><a href="/sodastereo/contacto">CONTACTO</a></li>
+        <li {if $active == 'contacto'}class="active"{/if}><a href="/eflores/sodastereo/contacto">CONTACTO</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li {if $active == 'admin'}class="active"{/if}><a href="/sodastereo/admin">{$admin}</a></li>
-        <li><a href="/sodastereo/admin/logout">{$logout}</a></li>
+        <li {if $active == 'admin'}class="active"{/if}><a href="/eflores/sodastereo/admin">{$admin}</a></li>
+        <li><a href="logout">{$logout}</a></li>
       </ul>
     </div>
   </div>
