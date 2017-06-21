@@ -16,7 +16,7 @@
           <label for="exampleInputText">Mensaje</label>
           <textarea class="form-control" rows="3" name="mensaje" placeholder="Texto"></textarea>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default btn-block">Enviar</button>
       </form>
     </div>
   </div>

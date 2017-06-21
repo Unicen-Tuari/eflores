@@ -52,9 +52,9 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $anio = $_POST["anio"];
       $this->modelo->modificarDisco($id_disco,$nombre, $anio);
-      header('Location: /sodastereo/admin/discografia');
+      header('Location: /eflores/sodastereo/admin/discografia');
     }else{
-      header('Location: /sodastereo/admin/discografia/editar/'.$id_disco);
+      header('Location: /eflores/sodastereo/admin/discografia/editar/'.$id_disco);
     }
   }
 
@@ -77,9 +77,9 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $duracion = $_POST["duracion"];
       $this->modelo->insertarCancion($id_disco,$nro,$nombre,$duracion);
-      header('Location: /sodastereo/admin/canciones');
+      header('Location: /eflores/sodastereo/admin/canciones');
     }else {
-      header('Location: /sodastereo/admin/canciones/new');
+      header('Location: /eflores/sodastereo/admin/canciones/new');
     }
   }
 
@@ -96,15 +96,15 @@ class ControllerAdmin{
       $nombre = $_POST["nombre"];
       $duracion = $_POST["duracion"];
       $this->modelo->insertarCancion($id_disco,$nro,$nombre,$duracion,$id);
-      header('Location: /sodastereo/admin/canciones');
+      header('Location: /eflores/sodastereo/admin/canciones');
     }else{
-      header('Location: /sodastereo/admin/canciones/editar/'.$id);
+      header('Location: /eflores/sodastereo/admin/canciones/editar/'.$id);
     }
   }
 
   function borrarCancion($id){
     $this->modelo->borrarCancion($id);
-    header('Location: /sodastereo/admin/canciones');
+    header('Location: /eflores/sodastereo/admin/canciones');
   }
 }
 ?>

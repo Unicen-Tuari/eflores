@@ -26,7 +26,7 @@ class ControllerContacto{
       $mensaje = $_POST["mensaje"];
       $this->modelo->insertarMensaje($nombre, $email, $mensaje);
     }
-    $this->vista->mostrarContacto();
+    header('Location: /eflores/sodastereo/contacto');
   }
 }
 ?>
